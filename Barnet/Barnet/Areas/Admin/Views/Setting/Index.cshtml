@@ -1,0 +1,49 @@
+﻿@model Setting
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <a class="btn btn-primary mb-3" asp-area="Admin" asp-controller="Setting" asp-action="Create">Create</a>
+        </div>
+
+        <div class="col-lg-12 mt-3">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">HeaderLogo</th>
+                        <th scope="col">Phone1</th>
+                        <th scope="col">Phone2</th>
+                        <th scope="col">Address</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">About</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                       <tr>
+                                            @*<th scope="row">@i</th>*@
+                                            <td><img src="~/Uploads/@Model.HeaderLogo" alt="" width="150" /> </td>
+                                            <td>@Model.Phone1</td>
+                                            <td>@Model.Phone2</td>
+                                            <td>@Model.Email</td>
+                                            <td>@Model.Address</td>
+                                            <td>@Model.About</td>
+                                            <td>
+                                                <a class="btn btn-success" asp-area="Admin" asp-controller="Setting" asp-action="Update" asp-route-id="@Model.Id">Update</a>
+                                                <a class="btn btn-danger" asp-area="Admin" asp-controller="Setting" asp-action="Delete" asp-route-id="@Model.Id" onclick="return confirm('Are you sure?')">Delete</a>
+                                            </td>
+                                        </tr>
+                        
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,29 @@
+﻿@model Article
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+            <form asp-area="Admin" asp-controller="Article" asp-action="Create" method="post" >
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <div class="mb-3">
+                    <label asp-for="@Model.CreatedDate" class="form-label">CreatedDate</label>
+                    <input class="form-control" asp-for="@Model.CreatedDate">
+                    <span asp-validation-for="@Model.CreatedDate" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="@Model.Title" class="form-label">Title</label>
+                    <input class="form-control" asp-for="@Model.Title">
+                    <span asp-validation-for="@Model.Title" class="text-danger"></span>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Create</button>
+                <a asp-area="Admin" asp-controller="Article" asp-action="Index">Back to list</a>
+            </form>
+        </div>
+    </div>
+</div>
+
